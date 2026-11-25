@@ -1,17 +1,320 @@
-@use '../base/templates' as *;
-@use '../base/media' as *;
+@use "../base/templates" as *;
+@use "../base/media" as *;
 
 .p-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  width: 260px;
+  max-width: 100%;
+  color: var(--bayoux);
+  background-color: white;
+  z-index: 120;
+
+  @include laptop-middle {
+    position: sticky;
+    width: 100%;
+    background-color: transparent;
+    padding: 0;
+  }
+  &__body {
+    border-right: 1px solid var(--catskill-w);
+    padding: 30px 25px;
+    @include laptop-middle {
+      display: flex;
+      background-color: white;
+      align-items: center;
+      gap: 30px;
+      padding: 15px 18px;
+      border-right: none;
+      border-bottom: 1px solid var(--catskill-w);
+    }
+    @include tablet {
+      padding: 10px 10px;
+      gap: 15px;
+    }
+  }
   &__logo {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    @include laptop-middle {
+      width: 150px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
   }
   &__nav {
+    margin-top: 25px;
+    @include laptop-middle {
+      flex: 1;
+      margin-top: 0;
+    }
+    @include laptop-min {
+      position: absolute;
+      left: -9999px;
+      z-index: -9999;
+    }
   }
   &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    @include laptop-middle {
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    a {
+      @include flex-center;
+      gap: 12px;
+      border-radius: 16px;
+      width: 100%;
+      padding: 10px;
+
+      transition: background-color 0.3s ease;
+
+      @include laptop-middle {
+        border-radius: 10px;
+        padding: 0;
+        background: none !important;
+        font-size: 15px;
+        gap: 8px;
+      }
+      @include hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--firefly);
+      }
+      &._active {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: var(--firefly);
+      }
+
+      i {
+        font-size: 11px;
+      }
+    }
   }
   &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+
+    @include laptop-middle {
+      margin-top: 0;
+      text-align: start;
+      flex-direction: row;
+      gap: 15px;
+    }
+    @include laptop-min {
+      margin-left: auto;
+    }
+    .social {
+      margin-top: 30px;
+      @include laptop-middle {
+        margin-top: 0;
+      }
+    }
   }
   &__tel {
+    font-size: 20px;
+    transition: color 0.3s ease;
+
+    @include laptop-middle {
+      font-size: 16px;
+    }
+    @include laptop-min {
+      display: none;
+    }
+    @include hover {
+      color: var(--primary);
+    }
   }
   &__address {
+    margin-top: 5px;
+    font-size: 12px;
+    @include laptop-middle {
+      display: none;
+    }
+  }
+  &__btn {
+    margin-top: 30px;
+    width: 100%;
+    @include laptop-middle {
+      display: none;
+    }
+  }
+  &__drop-overlay {
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(4px);
+    background: rgba(18, 54, 61, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 110;
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+
+    &._active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__drop {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    max-height: 100vh;
+    overflow-y: auto;
+    z-index: 115;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.4s ease;
+
+    &._open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  &__drop-item {
+    height: fit-content;
+    padding: 50px;
+    flex: 0 1 410px;
+
+    @include desktop {
+      padding: 30px;
+    }
+    @include laptop-middle {
+      padding: 30px 20px;
+    }
+
+    &:not(:last-child) {
+      border-right: 2px solid var(--catskill-w);
+    }
+
+    &._big {
+      flex: 1;
+    }
+
+    .item-name {
+      margin-bottom: 30px;
+    }
+    .item-list {
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 12px 15px;
+
+        font-size: 20px;
+
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease;
+
+        @include hover {
+          background-color: rgba(0, 0, 0, 0.05);
+          color: var(--primary);
+
+          &::before {
+            top: var(--offset-top);
+            bottom: var(--offset-top);
+          }
+        }
+        &._active {
+          background-color: rgba(0, 0, 0, 0.05);
+          color: var(--primary);
+
+          &::before {
+            top: var(--offset-top);
+            bottom: var(--offset-top);
+          }
+        }
+        @include desktop {
+          font-size: 18px;
+        }
+        @include laptop-middle {
+          font-size: 16px;
+        }
+
+        &::before {
+          --offset-top: 10px;
+          position: absolute;
+          content: "";
+          top: 50%;
+          bottom: 50%;
+          border-radius: 3px;
+          background-color: var(--primary);
+          left: 0;
+          width: 2px;
+
+          transition:
+            top 0.3s ease,
+            bottom 0.3s ease;
+        }
+      }
+    }
+    .item-list-s {
+      max-width: 790px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      row-gap: 25px;
+
+      @include desktop {
+        gap: 30px;
+        row-gap: 15px;
+      }
+      @include laptop-middle {
+        gap: 20px;
+        row-gap: 10px;
+      }
+
+      a {
+        color: var(--bayoux);
+        font-size: 20px;
+        @include desktop {
+          font-size: 18px;
+        }
+
+        transition: color 0.3s ease;
+
+        @include hover {
+          color: var(--primary);
+        }
+        @include laptop-middle {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    flex-shrink: 0;
+    @media (min-width: 1026px) {
+      display: none;
+    }
   }
 }

@@ -11,8 +11,16 @@
 @use "./ui/list";
 @use "./ui/title";
 @use "./ui/tab";
+@use "./ui/social";
+@use "./ui/hover-item";
+@use "./ui/sect";
+@use "./ui/content-box";
+@use "./ui/slider";
 
 @use "./components/header";
 @use "./components/p-sidebar";
+@use "./components/burger";
+
+@use "./components/s-hero";
 
 @use "./components/footer";

@@ -1,46 +1,98 @@
 <div class="p-sidebar">
-  <a href="/" class="p-sidebar__logo">
-    <img src="@img/logo.svg" alt="logo" />
-  </a>
-  <nav class="p-sidebar__nav">
-    <ul class="list p-sidebar__list">
-      <li>
-        <a href="#"><span>Главная</span></a>
-      </li>
-      <li>
-        <a href="#" data-sidebar-drop="services">
-          <span>Услуги</span>
-          <i class="icon-next"></i>
+  <div class="p-sidebar__body">
+    <a href="/" class="p-sidebar__logo">
+      <img src="@img/logo.svg" alt="logo" />
+    </a>
+    <nav class="p-sidebar__nav">
+      <ul class="list p-sidebar__list">
+        <li>
+          <a href="#"><span>Главная</span></a>
+        </li>
+        <li>
+          <a href="#" data-sidebar-drop-btn="services">
+            <span>Услуги</span>
+            <i class="icon-next"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#"><span>Прайс-лист</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Акции</span></a>
+        </li>
+        <li>
+          <a href="#"><span>О нас</span></a>
+        </li>
+        <li>
+          <a href="#"><span>Контакты</span></a>
+        </li>
+      </ul>
+    </nav>
+    <div class="p-sidebar__contacts">
+      <a href="tel:+79934019093" class="p-sidebar__tel">+7 (993) 401-90-93</a>
+      <div class="p-sidebar__address">г. Казань, Проспект Победы, д. 34</div>
+      <div class="social">
+        <a href="tel:+79934019093" rel="nofollow" class="social-item _tel _lap-min">
+          <i class="icon-tel"></i>
         </a>
-      </li>
-      <li>
-        <a href="#"><span>Прайс-лист</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Акции</span></a>
-      </li>
-      <li>
-        <a href="#"><span>О нас</span></a>
-      </li>
-      <li>
-        <a href="#"><span>Контакты</span></a>
-      </li>
-    </ul>
-  </nav>
-  <div class="p-sidebar__contacts">
-    <a href="tel:+79934019093" class="p-sidebar__tel">+7 (993) 401-90-93</a>
-    <div class="p-sidebar__address">г. Казань, Проспект Победы, д. 34</div>
-    <div class="social">
-      <a href="#" target="_blank" rel="nofollow" class="social-item">
-        <i class="icon-tg"></i>
-      </a>
-      <a href="#" target="_blank" rel="nofollow" class="social-item">
-        <i class="icon-max"></i>
-      </a>
-      <a href="#" target="_blank" rel="nofollow" class="social-item">
-        <i class="icon-vk"></i>
+        <a href="#" target="_blank" rel="nofollow" class="social-item _tg">
+          <i class="icon-tg"></i>
+        </a>
+        <a href="#" target="_blank" rel="nofollow" class="social-item _max">
+          <i class="icon-max"></i>
+        </a>
+        <a href="#" target="_blank" rel="nofollow" class="social-item _vk">
+          <i class="icon-vk"></i>
+        </a>
+      </div>
+      <a href="#modal-feeback" data-fancybox class="btn-s p-sidebar__btn">
+        Оставить заявку
       </a>
     </div>
-    <a href="#modal-feeback" data-fancybox class="btn-s">Оставить заявку</a>
+    <div class="p-sidebar__burger-btn" id="burger-open">
+      <i class="icon-burger"></i>
+    </div>
+  </div>
+</div>
+
+<div class="p-sidebar__drop-overlay"></div>
+<div
+  class="p-sidebar__drop _offset-s"
+  data-hover-container
+  data-sidebar-drop="services"
+>
+  <div class="p-sidebar__drop-item">
+    <div class="item-name s-title">Направления</div>
+    <ul class="list item-list">
+      <li>
+        <a data-hover-btn="item-1" href="#" class="_active">
+          Травматология и ортопедия
+        </a>
+      </li>
+      <li><a data-hover-btn="item-2" href="#">Мануальная терапия</a></li>
+      <li><a data-hover-btn="item-1" href="#">Манипуляции</a></li>
+      <li><a data-hover-btn="item-2" href="#">Мануальная терапия</a></li>
+      <li><a data-hover-btn="item-1" href="#">Манипуляции</a></li>
+    </ul>
+  </div>
+  <div class="p-sidebar__drop-item _big">
+    <div class="item-name s-title">Услуги</div>
+    <div data-hover-item="item-1" class="_active _show">
+      <ul class="list item-list-s">
+        <li><a href="#">Консультация врача</a></li>
+        <li><a href="#">Консультация врача</a></li>
+        <li><a href="#">Лечение заболеваний и деформаций</a></li>
+        <li><a href="#">Лечение заболеваний и деформаций</a></li>
+        <li><a href="#">Лечение травм</a></li>
+        <li><a href="#">Лечение травм</a></li>
+      </ul>
+    </div>
+    <div data-hover-item="item-2">
+      <ul class="list item-list-s">
+        <li><a href="#">Консультация врача</a></li>
+        <li><a href="#">Консультация врача</a></li>
+        <li><a href="#">Лечение заболеваний и деформаций</a></li>
+      </ul>
+    </div>
   </div>
 </div>

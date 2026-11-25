@@ -1,0 +1,125 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.btn-s {
+  --background: var(--primary);
+  --border: var(--primary);
+  --color: white;
+  --background-h: var(--primary-h);
+  --border-h: var(--primary-h);
+  --color-h: white;
+  --circle-color: var(--firefly);
+  --circle-background: white;
+  --circle-border: white;
+  --circle-color-h: var(--firefly);
+  --circle-background-h: white;
+  --circle-border-h: white;
+
+  @include flex-center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  border-radius: 30px;
+  width: fit-content;
+
+  user-select: none;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+
+  color: var(--color);
+
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  @include hover {
+    color: var(--color-h);
+    border-color: var(--border-h);
+    background-color: var(--background-h);
+
+    .circle {
+      border-color: var(--circle-border-h);
+      color: var(--circle-color-h);
+      background-color: var(--circle-background-h);
+    }
+  }
+
+  .circle {
+    @include flex-center;
+    flex-shrink: 0;
+    background-color: var(--circle-background);
+    color: var(--circle-color);
+    font-size: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+  }
+}
+
+.btn-play {
+  --color: var(--firefly);
+  --color-circle: white;
+  --border-circle: var(--primary);
+  --background-circle: var(--primary);
+  --color-h: var(--firefly);
+  --color-circle-h: white;
+  --border-circle-h: var(--primary-h);
+  --background-circle-h: var(--primary-h);
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+
+  user-select: none;
+  font-size: 18px;
+
+  transition: color 0.3s ease;
+
+  @include laptop-min {
+    font-size: 16px;
+    gap: 10px;
+  }
+  @include tablet {
+    font-size: 15px;
+  }
+  @include hover {
+    color: var(--color-h);
+    .btn-play__circle {
+      background-color: var(--background-circle-h);
+      border-color: var(--border-circle-h);
+      color: var(--color-circle-h);
+    }
+  }
+
+  &__circle {
+    @include flex-center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--border-circle);
+    background-color: var(--background-circle);
+    color: var(--color-circle);
+    font-size: 14px;
+
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease,
+      background-color 0.3s ease;
+
+    @include tablet {
+      width: 45px;
+      height: 45px;
+      font-size: 12px;
+    }
+    i {
+      transform: translateX(2px);
+    }
+  }
+}
