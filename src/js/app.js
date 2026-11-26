@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   sliders();
   burger();
 
+  // Fancybox.show([{src: "#modal-feedback", type: "inline"}])
+
   Fancybox.bind("[data-fancybox]", {
     on: {
       destroy: (instance) => {

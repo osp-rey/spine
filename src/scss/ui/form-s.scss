@@ -1,0 +1,88 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.form-s {
+  position: relative;
+  display: flex;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+
+  &._open {
+    .form-s__res {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__input {
+    padding: 10px 20px;
+    outline: none;
+    background: none;
+    border: none;
+    width: 100%;
+
+    font-size: 16px;
+
+    &::placeholder {
+      color: var(--bayoux);
+    }
+  }
+  &__btn {
+    @include flex-center;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    outline: none;
+    flex-shrink: 0;
+    background-color: var(--primary);
+    flex-shrink: 0;
+    border: none;
+
+    font-size: 16px;
+    color: white;
+
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+    @include hover {
+      background-color: var(--primary-h);
+    }
+  }
+  &__res {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 5px;
+    z-index: 10;
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      transform 0.4s ease,
+      visiblity 0.4s ease,
+      opacity 0.4s ease;
+  }
+  &__res-wrap {
+    max-height: 250px;
+    overflow-y: auto;
+  }
+  &__res-item {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+
+    transition: background-color 0.3s ease;
+    @include hover {
+      background-color: var(--catskill-w);
+    }
+  }
+}

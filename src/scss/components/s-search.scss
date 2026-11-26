@@ -1,0 +1,10 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-search {
+  margin: 30px 0px;
+
+  & + .sect-m {
+    margin-top: 0 !important;
+  }
+}

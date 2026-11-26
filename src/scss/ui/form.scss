@@ -1,0 +1,147 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.form-control {
+  width: 100%;
+  .wpcf7-not-valid-tip {
+    display: none;
+  }
+}
+.input {
+  --background: white;
+  --border: var(--apple);
+  --color: var(--color-text);
+  --background-h: white;
+  --border-h: var(--catskill-w);
+  --color-h: var(--color-text);
+  --background-f: white;
+  --border-f: var(--primary);
+  --color-f: var(--color-text);
+
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  padding: 18px 35px;
+  outline: none;
+
+  font-size: 16px;
+  color: var(--color);
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+
+  @include tablet {
+    padding: 15px 25px;
+  }
+  @include hover {
+    border-color: var(--border-h);
+    background-color: var(--background-h);
+    color: var(--color-h);
+  }
+  &:focus {
+    border-color: var(--border-f) !important;
+    background-color: var(--background-f) !important;
+    color: var(--color-f) !important;
+  }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.7;
+    font-size: 15px;
+  }
+
+  &.wpcf7-not-valid {
+    --border: var(--error-color);
+    --color: var(--error-color);
+    --border-h: var(--error-color);
+    --color-h: var(--error-color);
+    --border-f: var(--error-color);
+    --color-f: var(--error-color);
+  }
+}
+
+.check-wrap {
+  position: relative;
+  .wpcf7-not-valid {
+    .wpcf7-list-item-label {
+      --color: var(--error-color);
+      --color-a: var(--error-color);
+      --color-a-h: var(--error-color);
+
+      &::before {
+        --border: var(--error-color);
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+
+    &:checked + .wpcf7-list-item-label {
+      &::before {
+        background: var(--url) center / 14px auto no-repeat;
+        background-color: var(--background-a);
+        border-color: var(--border-a);
+      }
+    }
+  }
+  .wpcf7-list-item-label {
+    --color: var(--color-text);
+    --color-a: var(--color-text);
+    --color-a-h: var(--primary);
+
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    cursor: pointer;
+
+    color: var(--color);
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 138%;
+
+    a {
+      text-decoration: underline;
+      color: var(--color-a);
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--color-a-h);
+      }
+    }
+
+    &::before {
+      --border: rgba(0, 51, 63, 0.1);
+      --background: white;
+      --border-a: var(--primary);
+      --background-a: var(--primary);
+      --url: url("@img/check-white.svg");
+
+      content: "";
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 5px;
+      background-color: var(--background);
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+
+      transition:
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+    }
+  }
+  .wpcf7-list-item {
+    margin-left: 0;
+  }
+
+  .wpcf7-not-valid-tip {
+    display: none;
+  }
+}

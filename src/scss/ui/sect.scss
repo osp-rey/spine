@@ -37,3 +37,18 @@
     object-fit: cover;
   }
 }
+
+.sect-m {
+  margin: 70px 0px;
+  @include laptop-middle {
+    margin: 50px 0px;
+  }
+}
+.sect-head {
+  margin-bottom: 30px;
+
+  &__wrap {
+    @include flex-between;
+    gap: 30px;
+  }
+}

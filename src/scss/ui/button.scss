@@ -16,8 +16,9 @@
   --circle-border-h: white;
 
   @include flex-center;
+  cursor: pointer;
   gap: 10px;
-  padding: 10px 20px;
+  padding: 14px 20px;
   border: 1px solid var(--border);
   background-color: var(--background);
   border-radius: 30px;
