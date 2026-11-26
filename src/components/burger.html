@@ -1,4 +1,4 @@
-<div class="burger-overlay" id="burger-overlay"></div>
+<div class="burger-overlay" data-burger-close id="burger-overlay"></div>
 <div class="burger" id="burger">
   <div class="burger__head">
     <a href="/" class="burger__logo">
@@ -9,28 +9,102 @@
     </div>
   </div>
   <div class="burger__tabs">
-    <div data-burger-tab="burger-tab-start" class="_active _show">
+    <div data-burger-tab="tab-start" class="_active _show">
       <ul class="list burger__list">
         <li>
-          <a href="#"><span>Главная</span></a>
+          <a href="#" class="item-btn"><span>Главная</span></a>
         </li>
-        <li data-burger-tab-btn="tab-0">
+        <li data-burger-tab-btn="tab-0" class="item-btn">
           <a href="#">
             <span>Услуги</span>
-            <i class="icon-next"></i>
           </a>
+          <i class="icon-next"></i>
         </li>
         <li>
-          <a href="#"><span>Прайс-лист</span></a>
+          <a href="#" class="item-btn"><span>Прайс-лист</span></a>
         </li>
         <li>
-          <a href="#"><span>Акции</span></a>
+          <a href="#" class="item-btn"><span>Акции</span></a>
         </li>
         <li>
-          <a href="#"><span>О нас</span></a>
+          <a href="#" class="item-btn"><span>О нас</span></a>
         </li>
         <li>
-          <a href="#"><span>Контакты</span></a>
+          <a href="#" class="item-btn"><span>Контакты</span></a>
+        </li>
+      </ul>
+    </div>
+    <div data-burger-tab="tab-0">
+      <div data-burger-tab-btn="tab-start" class="burger__tab-prev">
+        <i class="icon-prev"></i>
+        <span>Назад</span>
+      </div>
+      <ul class="list burger__list">
+        <li class="item-btn" data-burger-tab-btn="tab-1">
+          <a href="#">Травматология и ортопедия</a>
+          <i class="icon-next"></i>
+        </li>
+        <li class="item-btn" data-burger-tab-btn="tab-2">
+          <a href="#">Мануальная терапия</a>
+          <i class="icon-next"></i>
+        </li>
+        <li class="item-btn" data-burger-tab-btn="tab-1">
+          <a href="#">Манипуляции</a>
+          <i class="icon-next"></i>
+        </li>
+        <li class="item-btn" data-burger-tab-btn="tab-2">
+          <a href="#">Мануальная терапия</a>
+          <i class="icon-next"></i>
+        </li>
+        <li class="item-btn" data-burger-tab-btn="tab-1">
+          <a href="#">Манипуляции</a>
+          <i class="icon-next"></i>
+        </li>
+      </ul>
+    </div>
+    <div data-burger-tab="tab-1">
+      <div data-burger-tab-btn="tab-0" class="burger__tab-prev">
+        <i class="icon-prev"></i>
+        <span>Травматология и ортопедия</span>
+      </div>
+      <ul class="list burger__list">
+        <li>
+          <a href="#" class="item-btn">Консультация врача</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Консультация врача</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Консультация врача</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Консультация врача</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Консультация врача</a>
+        </li>
+      </ul>
+    </div>
+    <div data-burger-tab="tab-2">
+      <div data-burger-tab-btn="tab-0" class="burger__tab-prev">
+        <i class="icon-prev"></i>
+        <span>Мануальная терапия</span>
+      </div>
+      <ul class="list burger__list">
+        <li>
+          <a href="#" class="item-btn">Лечение заболеваний и деформаций</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Лечение заболеваний и деформаций</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Лечение заболеваний и деформаций</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Лечение заболеваний и деформаций</a>
+        </li>
+        <li>
+          <a href="#" class="item-btn">Лечение заболеваний и деформаций</a>
         </li>
       </ul>
     </div>

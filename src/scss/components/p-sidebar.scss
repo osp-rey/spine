@@ -20,10 +20,13 @@
     padding: 0;
   }
   &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     border-right: 1px solid var(--catskill-w);
     padding: 30px 25px;
     @include laptop-middle {
-      display: flex;
+      flex-direction: row;
       background-color: white;
       align-items: center;
       gap: 30px;
@@ -106,13 +109,15 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 30px;
+    margin-top: auto;
+    padding-top: 30px;
 
     @include laptop-middle {
       margin-top: 0;
       text-align: start;
       flex-direction: row;
       gap: 15px;
+      padding-top: 0;
     }
     @include laptop-min {
       margin-left: auto;

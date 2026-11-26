@@ -1,3 +1,4 @@
+import burger from "./functions/burger.js";
 import hoverItem from "./functions/hoverItem.js";
 import offsetSidebar from "./functions/offsetSidebar.js";
 import pSidebarDrop from "./functions/pSidebarDrop.js";
@@ -8,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   hoverItem();
   pSidebarDrop();
   sliders();
+  burger();
 
   Fancybox.bind("[data-fancybox]", {
     on: {
