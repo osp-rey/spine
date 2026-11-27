@@ -74,4 +74,56 @@ export default function sliders() {
       },
     });
   }
+
+  const servicesSliders = document.querySelectorAll(".s-services__slider");
+  if (
+    servicesSliders.length &&
+    window.matchMedia("(max-width: 576px)").matches
+  ) {
+    servicesSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 15,
+        slidesPerView: "auto",
+        autoplay: {
+          delay: 6000,
+        },
+        scrollbar: {
+          el: ".s-services .slider-scrollbar",
+          draggable: true,
+        },
+      });
+    });
+  }
+
+  const teamSlider = document.querySelector(".s-team__slider");
+
+  if (teamSlider) {
+    const swiper = new Swiper(teamSlider, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 15,
+      autoplay: {
+        delay: 6000
+      },
+      navigation: {
+        prevEl: ".s-team .slider-arrow._prev",
+        nextEl: ".s-team .slider-arrow._next",
+      },
+      scrollbar: {
+        el: ".s-team .slider-scrollbar",
+        draggable: true,
+      },
+      breakpoints: {
+        1366: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 15,
+        },
+      },
+    });
+  }
 }

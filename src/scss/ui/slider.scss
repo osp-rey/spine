@@ -125,3 +125,26 @@
     display: none !important;
   }
 }
+
+.slider-scrollbar {
+  --background: var(--catskill-w);
+  --background-d: var(--primary);
+  margin-top: 40px;
+  width: 100%;
+  height: 1px;
+  background-color: var(--background);
+  @include laptop-middle {
+    margin-top: 30px;
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: var(--background-d);
+    &::before {
+      position: absolute;
+      content: "";
+      inset: -1px 0px;
+      background-color: var(--background-d);
+      z-index: 1;
+    }
+  }
+}

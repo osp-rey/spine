@@ -1,0 +1,92 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.card-promo {
+  position: relative;
+  display: block;
+  background-color: var(--wild);
+  border-radius: 22px;
+  overflow: hidden;
+  min-height: 390px;
+  padding: 30px 20px;
+  z-index: 1;
+
+  &._primary {
+    color: white;
+    background-color: var(--primary);
+
+    .card-promo__title {
+      @include hover {
+        color: var(--catskill-w);
+      }
+    }
+  }
+
+  @include laptop-min {
+    min-height: 340px;
+  }
+  @include tablet {
+    border-radius: 16px;
+    padding: 20px 18px;
+    min-height: 300px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 330px;
+  }
+  &__tag {
+    display: block;
+    padding: 10px 20px;
+    border-radius: 30px;
+    width: fit-content;
+    background-color: var(--apple);
+
+    color: var(--firefly);
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    z-index: 10;
+
+    @include laptop-min {
+      font-size: 16px;
+    }
+  }
+  &__title {
+    width: fit-content;
+    margin-top: 35px;
+    transition: color .3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+    @include tablet {
+      margin-top: 20px;
+    }
+  }
+  &__date {
+    margin: 25px 0px;
+    @include tablet {
+      margin: 15px 0px;
+    }
+  }
+  &__btn {
+    margin-top: auto;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    pointer-events: none;
+    z-index: -1;
+
+    @include laptop {
+      width: 230px;
+      opacity: 0.5;
+    }
+  }
+}

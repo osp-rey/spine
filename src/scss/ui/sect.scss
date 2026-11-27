@@ -20,6 +20,15 @@
     padding: 30px 18px;
     border-radius: 18px;
   }
+
+  .sect-m {
+    &:first-child {
+      margin-top: 0 !important;
+    }
+    &:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
 }
 .sect-bg {
   position: absolute;
@@ -52,5 +61,10 @@
     flex-wrap: wrap;
     gap: 30px;
     row-gap: 20px;
+  }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 }

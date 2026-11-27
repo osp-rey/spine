@@ -2,12 +2,21 @@
 @use "../base/media" as *;
 
 .card-service {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 25px;
   border-radius: 22px;
   overflow: hidden;
   background-color: white;
   z-index: 1;
+
+  @include desktop {
+    padding: 25px 20px;
+  }
+  @include tablet {
+    border-radius: 18px;
+  }
 
   @include hover {
     &::before {
@@ -56,15 +65,35 @@
     align-items: center;
     gap: 20px;
     transition: color 0.3s ease;
+    @include laptop {
+      gap: 15px;
+      align-items: start;
+    }
     .item-num {
       font-size: 60px;
       letter-spacing: -0.03em;
       opacity: 0.1;
       flex-shrink: 0;
       transition: opacity 0.3s ease;
+
+      @include desktop-big {
+        font-size: 52px;
+      }
+      @include desktop {
+        font-size: 40px;
+      }
+      @include laptop-min {
+        font-size: 28px;
+      }
     }
     .item-title {
       font-size: 24px;
+      @include desktop {
+        font-size: 20px;
+      }
+      @include laptop-min {
+        font-size: 18px;
+      }
     }
   }
   &__content {

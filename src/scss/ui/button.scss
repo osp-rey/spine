@@ -47,6 +47,30 @@
     }
   }
 
+  &._white {
+    --background: white;
+    --border: white;
+    --color: var(--firefly);
+    --background-h: var(--catskill-w);
+    --border-h: var(--catskill-w);
+    --color-h: var(--firefly);
+
+    --circle-color: white;
+    --circle-background: var(--primary);
+    --circle-border: var(--primary);
+    --circle-color-h: white;
+    --circle-background-h: var(--primary-h);
+    --circle-border-h: var(--primary-h);
+  }
+  &._outline-botticelli {
+    --background: transparent;
+    --border: var(--botticelli);
+    --color: var(--firefly);
+    --background-h: var(--botticelli);
+    --border-h: var(--botticelli);
+    --color-h: var(--firefly);
+  }
+
   .circle {
     @include flex-center;
     flex-shrink: 0;
