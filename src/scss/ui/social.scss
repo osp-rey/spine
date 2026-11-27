@@ -45,6 +45,15 @@
       background-color: var(--background-h);
     }
 
+    &._white {
+      --background: white;
+      --border: white;
+      --color: var(--primary);
+      --background-h: var(--catskill-w);
+      --border-h: var(--catskill-w);
+      --color-h: var(--primary);
+    }
+
     &._max {
       font-size: 16px;
     }
