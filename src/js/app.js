@@ -2,6 +2,7 @@ import burger from "./functions/burger.js";
 import hoverItem from "./functions/hoverItem.js";
 import offsetSidebar from "./functions/offsetSidebar.js";
 import pSidebarDrop from "./functions/pSidebarDrop.js";
+import scrollable from "./functions/scrollbable.js";
 import sliders from "./functions/sliders.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   pSidebarDrop();
   sliders();
   burger();
+  scrollable();
 
   // Fancybox.show([{src: "#modal-feedback", type: "inline"}])
 

@@ -49,6 +49,8 @@
 
   &__wrap {
     @include flex-between;
+    flex-wrap: wrap;
     gap: 30px;
+    row-gap: 20px;
   }
 }

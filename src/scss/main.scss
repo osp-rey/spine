@@ -19,6 +19,8 @@
 @use "./ui/form-s";
 @use "./ui/scrollbar";
 @use "./ui/form";
+@use "./ui/sect-nav";
+@use "./ui/card-service";
 
 @use "./components/header";
 @use "./components/p-sidebar";
@@ -28,5 +30,6 @@
 @use "./components/s-hero";
 @use "./components/s-search";
 @use "./components/s-about";
+@use "./components/s-services";
 
 @use "./components/footer";

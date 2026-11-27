@@ -52,7 +52,7 @@ export default function sliders() {
       slidesPerView: "auto",
       spaceBetween: 20,
       autoplay: {
-        delay: 6000,
+        delay: 5500,
       },
       navigation: {
         prevEl: ".s-about__adv .slider-arrow._prev",
