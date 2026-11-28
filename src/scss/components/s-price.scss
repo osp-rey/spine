@@ -1,0 +1,67 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-price {
+  &__table {
+    font-size: 15px;
+    color: var(--bayoux);
+
+    @include tablet {
+      font-size: 14px
+    }
+  }
+  &__table-body {
+  }
+  &__table-item {
+    @include flex-between;
+    gap: 20px;
+    padding: 20px 25px;
+
+    border-radius: 10px;
+    background-color: white;
+
+    @include tablet {
+      padding: 15px;
+    }
+    @include tablet-min {
+      flex-direction: column;
+      align-items: start;
+      gap: 15px;
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--apple);
+    }
+
+    &._head {
+      font-weight: 700;
+      @include tablet-min {
+        display: none;
+      }
+    }
+
+    .table-cell {
+      @include tablet-min {
+        width: 100%;
+        &:not(:last-child) {
+          padding-bottom: 15px;
+          border-bottom: 1px solid var(--catskill-w);
+        }
+      }
+      &:last-child {
+        flex-shrink: 0;
+      }
+
+      .item-name {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 5px;
+        color: var(--firefly);
+        opacity: 0.7;
+        @media (min-width: 576px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

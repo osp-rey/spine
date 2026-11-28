@@ -1,0 +1,35 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.breadcrumbs-sect {
+  padding: 30px 0px;
+  @include laptop-middle {
+    padding: 20px 0px;
+  }
+
+  & + .sect-m {
+    margin-top: 0 !important;
+  }
+}
+
+.breadcrumbs {
+  .aioseo-breadcrumbs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    row-gap: 10px;
+
+    font-weight: 300;
+    font-size: 12px;
+
+    a {
+      color: rgba(18, 54, 61, 0.5);
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+}

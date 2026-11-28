@@ -1,0 +1,81 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-connect {
+  &__body {
+    position: relative;
+    z-index: 1;
+  }
+  &__main {
+    position: relative;
+    width: 50%;
+    padding: 60px 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: var(--primary);
+    color: white;
+    z-index: 1;
+
+    @include laptop {
+      padding: 30px;
+      border-radius: 20px;
+    }
+    @include laptop-min {
+      width: 100%;
+    }
+    @include tablet {
+      padding: 25px 18px;
+    }
+  }
+  &__main-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    pointer-events: none;
+    z-index: -1;
+  }
+  &__title {
+    max-width: 375px;
+  }
+  &__content {
+    font-size: 16px;
+    margin-top: 25px;
+  }
+  &__form {
+    width: 515px;
+    max-width: 100%;
+    margin-top: 25px;
+    @include laptop-min {
+      width: 100%;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .btn-s {
+      width: 100%;
+      min-height: 55px;
+    }
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 0px 30px 30px 0px;
+    object-fit: cover;
+    width: 55%;
+    height: 100%;
+    z-index: -1;
+    @include laptop {
+      border-radius: 0px 20px 20px 0px;
+    }
+    @include laptop-min {
+      position: static;
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+}

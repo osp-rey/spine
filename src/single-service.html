@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    @@include("components/head.html")
+  </head>
+  <body class="body">
+    @@include("components/header.html") 
+    @@include("components/p-sidebar.html")
+    @@include("components/burger.html") 
+    @@include("components/modals.html")
+
+    <main class="_offset-s">
+      @@include("components/s-intro-service.html")
+      @@include("components/s-service-spec.html")
+      @@include("components/s-price.html")
+    </main>
+
+    @@include("components/footer.html")
+
+    <script src="./js/app.js?ver=@@versions.js"></script>
+  </body>
+</html>
